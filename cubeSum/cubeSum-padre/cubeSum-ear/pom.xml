@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>cubeSum-padre</artifactId>
+		<groupId>com.cubeSum</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>cubeSum-ear</artifactId>
+	<packaging>ear</packaging>
+
+	<name>Cube Sum [EAR]</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.cubeSum.web</groupId>
+			<artifactId>cubeSum-web</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.cubeSum.servicios</groupId>
+			<artifactId>cubeSum-servicios</artifactId>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<modules>
+						<!-- Semillero -->
+						<webModule>
+							<groupId>com.cubeSum.servicios</groupId>
+							<artifactId>cubeSum-servicios</artifactId>
+							<contextRoot>/cubeSum-servicios</contextRoot>
+						</webModule>
+						<webModule>
+							<groupId>com.cubeSum.web</groupId>
+							<artifactId>cubeSum-web</artifactId>
+							<contextRoot>/CubeSumWEB</contextRoot>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

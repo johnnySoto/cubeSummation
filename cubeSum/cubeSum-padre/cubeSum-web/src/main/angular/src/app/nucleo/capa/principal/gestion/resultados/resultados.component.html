@@ -1,0 +1,42 @@
+<form>
+	<h3> Consulta sumatoria cubo</h3>
+	<div class="card">
+		<div class="section">
+
+			<table>
+				<tr>
+					<td>Campo</td>
+					<td style="text-align: center">X</td>
+					<td style="text-align: center">Y</td>
+					<td style="text-align: center">Z</td>
+				</tr>
+				<tr>
+					<td>Inicial</td>
+					<td>
+						<input type="text" placeholder="Posición x inicial" [(ngModel)]="datosConsultaValorInDTO.puntoXUno"
+							name="x1"></td>
+					<td><input type="text" placeholder="Posición y inicial" [(ngModel)]="datosConsultaValorInDTO.puntoYUno"
+							name="y1"></td>
+					<td><input type="text" placeholder="Posición z inicial" [(ngModel)]="datosConsultaValorInDTO.puntoZUno"
+							name="z1"></td>
+				</tr>
+				<tr>
+					<td>Final</td>
+					<td>
+						<input type="text" placeholder="Posición x final" [(ngModel)]="datosConsultaValorInDTO.puntoXDos" name="x2">
+					</td>
+					<td><input type="text" placeholder="Posición y final" [(ngModel)]="datosConsultaValorInDTO.puntoYDos"
+							name="y2"></td>
+					<td><input type="text" placeholder="Posición z final" [(ngModel)]="datosConsultaValorInDTO.puntoZDos"
+							name="z2"></td>
+				</tr>
+			</table>
+
+
+
+		</div>
+	</div>
+
+	<input value="Consultar sumatoria cubo" type="submit" (click)="consultarSuma()" />
+	<pre>{{ resultado | json }}</pre>
+</form>

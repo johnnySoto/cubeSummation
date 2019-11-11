@@ -1,0 +1,20 @@
+<fieldset>
+	<legend>Elige una opción</legend>
+	<label>
+		<input type="radio" [(ngModel)]="consulta" value="consulta"> Consulta
+	</label>
+	<label>
+		<input type="radio" name="opcion" [(ngModel)]="consulta" value="actualizar"> Actualizar
+	</label>
+</fieldset>
+<div *ngIf="consulta=='consulta'; then bloqueConsulta; else bloqueActulizar"></div>
+
+<ng-template #bloqueConsulta>
+	<app-resultados>
+	</app-resultados>
+</ng-template>
+
+<ng-template #bloqueActulizar>
+	<app-actualizar>
+	</app-actualizar>
+</ng-template>

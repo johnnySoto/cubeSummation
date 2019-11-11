@@ -1,0 +1,33 @@
+<form>
+	<h3> Actualizar Posición Cubo</h3>
+	<div class="card">
+		<div class="section">
+
+			<table>
+				<tr>
+					<td>Campo</td>
+					<td style="text-align: center">X</td>
+					<td style="text-align: center">Y</td>
+					<td style="text-align: center">Z</td>
+					<td style="text-align: center">Nuevo valor</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="text" placeholder="Posición x inicial" [(ngModel)]="coordenada.puntoX" name="x1">
+					</td>
+					<td><input type="text" placeholder="Posición y inicial" [(ngModel)]="coordenada.puntoY" name="y1">
+					</td>
+					<td><input type="text" placeholder="Posición z inicial" [(ngModel)]="coordenada.puntoZ" name="z1">
+					</td>
+					<td><input type="text" placeholder="valor" [(ngModel)]="coordenada.valor" name="valor">
+					</td>
+				</tr>
+			</table>
+
+		</div>
+	</div>
+
+	<input value="Actualizar posición cubo" type="submit" (click)="actualizarCoordenada()" />
+	<pre>{{ resultado | json }}</pre>
+</form>
